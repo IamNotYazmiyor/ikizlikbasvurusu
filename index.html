@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İkiz Adayı Başvuru Formu</title>
+    <style>
+        :root {
+            --paper-bg: #fffdfa;
+            --border-color: #2d3436;
+            --accent-blue: #0984e3;
+        }
+
+        body {
+            font-family: 'Courier New', Courier, monospace; /* Form havası vermesi için daktilo tipi yazı tipi */
+            background-color: #f0f2f5;
+            color: #2d3436;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .form-container {
+            max-width: 650px;
+            width: 100%;
+            background: var(--paper-bg);
+            border: 2px solid var(--border-color);
+            padding: 40px;
+            box-shadow: 10px 10px 0px rgba(0,0,0,0.1);
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 2px double var(--border-color);
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+        }
+
+        h1 {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0;
+            font-size: 1.4rem;
+        }
+
+        .form-section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-weight: bold;
+            text-decoration: underline;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+
+        input[type="text"], 
+        input[type="number"], 
+        select, 
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            background: transparent;
+            font-family: inherit;
+            box-sizing: border-box;
+            border-bottom: 1px solid var(--border-color);
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        }
+
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.85rem;
+        }
+
+        .checkbox-item input {
+            margin-right: 10px;
+        }
+
+        .footer-note {
+            margin-top: 30px;
+            font-size: 0.75rem;
+            font-style: italic;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+
+        .submit-btn {
+            background: var(--border-color);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            font-family: inherit;
+            font-weight: bold;
+            font-size: 1rem;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #000;
+        }
+
+        #response-msg {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .stamp {
+            border: 3px solid #d63031;
+            color: #d63031;
+            display: inline-block;
+            padding: 10px;
+            transform: rotate(-15deg);
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container" id="formWrapper">
+        <header>
+            <h1>İkiz Adayı Tespit ve Başvuru Formu</h1>
+            <p style="font-size: 0.8rem;">Dosya No: 2024/IKZ-001</p>
+        </header>
+
+        <div class="form-section">
+            <span class="section-title">01. Kimlik Bilgileri</span>
+            <div class="input-group">
+                <label>Adınız ve Soyadınız:</label>
+                <input type="text" placeholder="..........................................">
+            </div>
+            <div class="input-group">
+                <label>Doğum Yılınız (Yaşıt mıyız kontrolü):</label>
+                <input type="number" placeholder="Örn: 1998">
+            </div>
+        </div>
+
+        <div class="form-section">
+            <span class="section-title">02. Karakter ve Alışkanlık Uyumu</span>
+            <label>Seni en iyi tanımlayan 3 özellik:</label>
+            <div class="checkbox-group">
+                <div class="checkbox-item"><input type="checkbox"> Gece Kuşu</div>
+                <div class="checkbox-item"><input type="checkbox"> Oyun Bağımlısı</div>
+                <div class="checkbox-item"><input type="checkbox"> Kitap Kurdu</div>
+                <div class="checkbox-item"><input type="checkbox"> Dışarıda Takılmayı Sever</div>
+                <div class="checkbox-item"><input type="checkbox"> Aşırı Üşengeç</div>
+                <div class="checkbox-item"><input type="checkbox"> Her Şeye Gülen</div>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <span class="section-title">03. Kritik Sorular</span>
+            <div class="input-group">
+                <label>En sevdiğin yemek (Burada ayrılabiliriz):</label>
+                <input type="text">
+            </div>
+            <div class="input-group">
+                <label>Hafta sonu planın hangisidir?</label>
+                <select>
+                    <option value="">Seçiniz...</option>
+                    <option>Akşama kadar uyumak</option>
+                    <option>Yeni yerler keşfetmek</option>
+                    <option>Bilgisayar başında sabahlamak</option>
+                    <option>Arkadaşlar kalsın, ben evdeyim</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <span class="section-title">04. Ek Notlar</span>
+            <label>Neden seninle "benzer" olduğumuzu düşünüyorsun?</label>
+            <textarea rows="4"></textarea>
+        </div>
+
+        <button class="submit-btn" onclick="submitForm()">BAŞVURUYU TAMAMLA</button>
+
+        <div class="footer-note">
+            * Bu form kişisel bir merak üzerine hazırlanmıştır. Verileriniz sadece benim tarafımdan (eğer sistemi bir yere bağlarsan) görülecektir.
+        </div>
+    </div>
+
+    <div class="form-container" id="response-msg">
+        <div class="stamp">ALINDI</div>
+        <h2>Başvurunuz Kaydedildi!</h2>
+        <p>İkiz kriterlerini karşılayıp karşılamadığınız uzman ekiplerimiz (yani ben) tarafından incelenecektir.</p>
+        <p>Eğer gerçekten benzersek, evren bizi bir şekilde karşılaştıracaktır.</p>
+        <button class="submit-btn" onclick="location.reload()">YENİ BAŞVURU</button>
+    </div>
+
+    <script>
+        function submitForm() {
+            // Basit bir geçiş efekti
+            document.getElementById('formWrapper').style.display = 'none';
+            document.getElementById('response-msg').style.display = 'block';
+            
+            // Gerçek bir backend olmadığı için şimdilik sadece görsel tepki veriyoruz
+            console.log("Form gönderildi!");
+        }
+    </script>
+</body>
+</html>
+
